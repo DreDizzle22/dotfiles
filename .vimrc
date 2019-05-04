@@ -1,3 +1,6 @@
 imap jj <Esc>
-set clipboard=unnamed
+set clipboard=unnamedplus
 set number
+set wrap
+set linebreak
+set nolist
