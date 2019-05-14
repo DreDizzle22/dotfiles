@@ -24,20 +24,10 @@ Run `git config -e` then append the following:
 
 **Step 5**
 ```
-git --git-dir=$HOME/dotfiles --work-tree=$HOME
+git --git-dir=$HOME/dotfiles --work-tree=$HOME remote add origin https://github.com/DreDizzle22/dotfiles.git
 ```
 
 **Step 6**
 ```
-cd ~
-```
-
-**Step 7**
-```
-git remote add https://github.com/DreDizzle22/dotfiles.git
-```
-
-**Step 8**
-```
-git pull -u origin master
+git --git-dir=$HOME/dotfiles --work-tree=$HOME pull origin master
 ```
