@@ -1,1 +1,35 @@
 set completion-ignore-case on
+
+# Enable vi mode and set keymap
+set editing-mode vi
+set keymap vi
+
+# "\M-\e[D": beginning-of-line
+set show-mode-in-prompt on
+set vi-cmd-mode-string "\1\e[2 q\2"
+set vi-ins-mode-string "\1\e[6 q\2"
+
+# vi keybindings
+set keymap vi-command
+"gg": beginning-of-history
+"G": end-of-history
+"\eOD":""
+"\e[D":""
+"\eOC":""
+"\e[C":""
+"\eOA":""
+"\e[A":""
+"\eOB":""
+"\e[B":""
+set keymap vi-insert
+"jj": vi-movement-mode
+RET: "\e\njj"
+"\eOD":""
+"\e[D":""
+"\eOC":""
+"\e[C":""
+"\eOA":""
+"\e[A":""
+"\eOB":""
+"\e[B":""
+set colored-stats On
