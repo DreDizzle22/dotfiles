@@ -43,7 +43,7 @@ Change the shell by running the following:
 `chsh -s /usr/local/bin/bash`
 
 **Step 3**
-Add the following commands to the .vimrc file.
+Add the following commands to the .inputrc file.
 ```
 # Enable vi mode and set keymap
 set editing-mode vi
