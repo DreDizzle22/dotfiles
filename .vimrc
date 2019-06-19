@@ -1,5 +1,5 @@
+syntax on
 imap jj <Esc>
-
 set nolist
 
 " Map leader to spacebar

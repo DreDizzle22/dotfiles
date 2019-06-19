@@ -3,7 +3,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias dots='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 
-export PATH=$PATH:~/Library/Python/2.7/bin:~/Library/Python/3.7/bin
+export PATH=$PATH:~/Library/Python/2.7/bin:~/Library/Python/3.7/bin:/usr/local/opt/node@10/bin
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
