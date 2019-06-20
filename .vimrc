@@ -3,6 +3,17 @@ imap jj <Esc>
 set nolist
 highlight CursorLineNr ctermfg=white ctermbg=blue
 
+" enable and style spell-check
+set spell spelllang=en_us
+hi clear SpellBad
+hi clear SpellCap
+hi clear SpellLocal
+hi clear SpellRare
+hi SpellBad cterm=underline
+hi SpellCap cterm=underline
+hi SpellLocal cterm=underline
+hi SpellRare cterm=underline
+
 " Map leader to spacebar
 let mapleader = "\<Space>"
 
@@ -26,7 +37,7 @@ set wildmenu
 " Treated as a word boundary (though not a WORD boundary)
 " set iskeyword-=_
 
-" Make sure the staus bar for airline stays showing
+" Make sure the status bar for airline stays showing
 set laststatus=2
 
 " Set to auto read when a file is changed from the outside
