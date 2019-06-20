@@ -1,6 +1,7 @@
 syntax on
 imap jj <Esc>
 set nolist
+highlight CursorLineNr ctermfg=white ctermbg=blue
 
 " Map leader to spacebar
 let mapleader = "\<Space>"
