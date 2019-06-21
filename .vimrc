@@ -4,15 +4,15 @@ set nolist
 highlight CursorLineNr ctermfg=white ctermbg=blue
 
 " enable and style spell-check
-set spell spelllang=en_us
-hi clear SpellBad
-hi clear SpellCap
-hi clear SpellLocal
-hi clear SpellRare
-hi SpellBad cterm=underline
-hi SpellCap cterm=underline
-hi SpellLocal cterm=underline
-hi SpellRare cterm=underline
+"set spell spelllang=en_us
+"hi clear SpellBad
+"hi clear SpellCap
+"hi clear SpellLocal
+"hi clear SpellRare
+"hi SpellBad cterm=underline
+"hi SpellCap cterm=underline
+"hi SpellLocal cterm=underline
+"hi SpellRare cterm=underline
 
 " Map leader to spacebar
 let mapleader = "\<Space>"
