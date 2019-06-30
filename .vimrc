@@ -1,7 +1,19 @@
 syntax on
 imap jj <Esc>
 set nolist
-highlight CursorLineNr ctermfg=white ctermbg=blue
+
+highlight CursorLineNr ctermfg=black ctermbg=green
+
+set cursorline
+highlight CursorLine cterm=none ctermfg=none ctermbg=black
+
+" enable powerline-status for vim
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
+
+packadd minpac
+call minpac#init()
 
 " enable and style spell-check
 "set spell spelllang=en_us
@@ -108,8 +120,6 @@ let g:netrw_banner=0
 
 " set foldmethod=marker
 autocmd FileType vim setlocal foldmethod=marker
-
-" set cursorline
 
 " keep folds on leave
 au BufWinLeave *.c mkview
