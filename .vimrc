@@ -9,9 +9,9 @@ call vundle#begin('~/.vim/bundle')
 
 " let vundle manage vundle, required
 Plugin 'VundleVim/Vundle.vim'
+" Plugin 'powerline/powerline'
 " Plugin 'vim-airline/vim-airline'
 " Plugin 'vim-airline/vim-airline-themes'
-" Plugin 'valloric/youcompleteme'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -37,6 +37,7 @@ highlight CursorLineNr ctermfg=black ctermbg=green
 set cursorline
 highlight CursorLine cterm=none ctermfg=none ctermbg=black
 
+let g:ycm_use_clangd = 0
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 " enable powerline-status for vim
