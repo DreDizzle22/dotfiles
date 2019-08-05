@@ -11,10 +11,21 @@ export PATH=$PATH:$HOME/.local/bin:$HOME/Library/Python/2.7/bin:$HOME/Library/Py
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export LSCOLORS=exfxcxdxbxegedabagacad
-export CLICOLOR=1
-export TERM=xterm-256color
+#export LSCOLORS=exfxcxdxbxegedabagacad
+#export CLICOLOR=1
+#export TERM=xterm-256color
 
+# Set colors
+export LSCOLORS=ExFxBxDxCxegedabagacad
+export CLICOLOR=true
+# export TERM=xterm-256color
+if [[ $TMUX = "" ]]; then
+  export TERM=xterm-256color
+else
+  export TERM=screen-256color
+fi
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 export VIMCONFIG=~/.vim
 export VIMDATA=~/.vim
 
