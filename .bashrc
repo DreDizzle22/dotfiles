@@ -1,8 +1,8 @@
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias dots='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
-alias vim=tmux_nvim
+alias dot='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
+alias vim='dmux vim'
 alias vifm='vifm -c "set vicmd=tmux_nvim"'
 # alias vi=/usr/local/bin/vim
 # alias vim=/usr/local/bin/vim
