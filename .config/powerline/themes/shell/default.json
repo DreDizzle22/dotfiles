@@ -1,0 +1,5 @@
+{
+    "function": "powerline_gitstatus.gitstatus",
+    "priority": 40
+}
+
