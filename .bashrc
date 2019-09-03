@@ -7,7 +7,7 @@ alias vifm='vifm -c "set vicmd=tmux_nvim"'
 # alias vi=/usr/local/bin/vim
 # alias vim=/usr/local/bin/vim
 
-export PATH=$PATH:$HOME/.local/bin:$HOME/Library/Python/2.7/bin:$HOME/Library/Python/3.7/bin:/usr/local/opt/node@10/bin:/bin/sh:$HOME/.local/bin
+export PATH=$PATH:$HOME/.local/bin:$HOME/Library/Python/2.7/bin:$HOME/Library/Python/3.7/bin:/usr/local/opt/node@10/bin:/bin/sh
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
