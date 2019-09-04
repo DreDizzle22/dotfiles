@@ -1,3 +1,2 @@
-vifminfo
-tags
-*.swp
+# blacklist files and folders in the same directory as .gitignore
+/*
