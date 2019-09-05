@@ -4,7 +4,9 @@ alias l='ls -CF'
 alias dot='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 alias vim='dmux vim'
 alias vifm='vifm -c "set vicmd=tmux_nvim"'
+alias bp='dmux vim ~/.bash_profile'
 alias brc='dmux vim ~/.bashrc'
+alias irc='dmux vim ~/.inputrc'
 alias sbp='source ~/.bash_profile'
 
 export PATH=$PATH:$HOME/.local/bin:$HOME/Library/Python/2.7/bin:$HOME/Library/Python/3.7/bin:/usr/local/opt/node@10/bin:/bin/sh
