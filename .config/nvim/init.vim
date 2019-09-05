@@ -31,6 +31,7 @@ call dein#add('vifm/vifm.vim')
 call dein#add('bogado/file-line')
 call dein#add('chrisbra/colorizer')
 call dein#add('christoomey/vim-tmux-navigator')
+call dein#add('urbainvaes/vim-tmux-pilot')
 call dein#add('edkolev/promptline.vim')
 call dein#add('ervandew/supertab')
 call dein#add('godlygeek/tabular')
@@ -49,7 +50,7 @@ call dein#add('kristijanhusak/deoplete-phpactor')
 " call dein#add('lvht/phpcd.vim', { 'build': 'composer install'})
 call dein#add('majutsushi/tagbar')
 call dein#add('mattn/emmet-vim')
-" call dein#add('mhinz/vim-startify')
+call dein#add('mhinz/vim-startify')
 call dein#add('michaeljsmith/vim-indent-object')
 call dein#add('mtth/scratch.vim')
 call dein#add('myusuf3/numbers.vim')
@@ -155,7 +156,8 @@ nnoremap Q :qall<CR>
 " nnoremap <Leader>w :write<CR>
 
 nnoremap cgn *cgn
-nnoremap <Leader>a ggVG:normal.<CR>``
+nnoremap <Leader>a :FindAll<Space>
+" nnoremap <Leader>a ggVG:normal.<CR>``
 " Like :wq, but write only when changes have been made.
 nnoremap <Leader>x :xit<CR>
 " <Leader>zz -- Zap trailing whitespace in the current buffer.
@@ -324,8 +326,6 @@ let g:netrw_banner=0
 autocmd FileType vim setlocal foldmethod=marker
 
 set cursorline
-highlight CursorLine cterm=none ctermfg=none ctermbg=black
-highlight Comment ctermbg=none
 
 au BufWinLeave *.c mkview
 au BufWinEnter *.c silent! loadview
@@ -350,6 +350,10 @@ onoremap <Leader>aw aw
 
 " Plugin Preferences ---------------------------------------------------------------{{{
 
+" Vifm  --------------------------------------------------------------- {{{
+let g:vifm_replace_netrw = 1
+" }}}
+
 " Vim One (colorscheme) --------------------------------------------------------------- {{{
 syntax enable
 colorscheme one
@@ -359,6 +363,8 @@ call one#highlight('Cursor', '99c37e', '282c33', 'none')
 " call one#highlight('Normal', 'b2ad92', '99c37e', 'none')
 
 let g:one_allow_italics = 1
+
+autocmd VimEnter,ColorScheme * :call one#highlight ('StartifyHeader', '61afef', 'none', 'none')
 
 autocmd VimEnter,Colorscheme * :call one#highlight('Search', '282c33', 'd4dce2', 'none')
 autocmd VimEnter,Colorscheme * :call one#highlight('IncSearch', 'ffffff', '62afec', 'none')
@@ -408,7 +414,8 @@ endif
 
 " Indent Guides ---------------------------------------------------------------{{{
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=none ctermbg=NONE
-        autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#2e3239 ctermbg=NONE
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#2e3239 ctermbg=NONE
+
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 1
 let g:indent_guides_guide_size = 2
@@ -489,7 +496,7 @@ function! AgHandler(line)
   normal! zz
 endfunction
 
-command! -nargs=+ Fag call fzf#run({
+command! -nargs=+ FindAll call fzf#run({
   \ 'source': 'ag "<args>"',
   \ 'sink': function('AgHandler'),
   \ 'options': '+m',
@@ -507,7 +514,86 @@ nnoremap + :<C-u>execute '+'.v:count1.'copy.'<CR>
 " }}}
 
 " Startify ---------------------------------------------------------------{{{
-" let g:startify_session_persistence=1
+let g:startify_session_persistence=1
+" let g:startify_custom_header = [
+" \'',
+" \'                         -+.          /:     ',
+" \'                       -osoo:         +ys:   ',
+" \'                     /osssooo/`       +yyys: ',
+" \'                    /+ossssooo+.      +yyyyys',
+" \'                    +++osssooooo:     +yyyyyy',
+" \'                    +ooooosssssso/`   +yyyyyy',
+" \'                    +ooooo++sssssso.  +yyyyyy',
+" \'                    +ooooo/`:sssssso- +hhhyyy',
+" \'                    oooooo/` -ossssss/+hhhhhy',
+" \'                    oooooo/`  `+ssssssyhhhhhy',
+" \'                    osssss/`   `/sssssyyhhhhy',
+" \'                    osssss/`     -syyyyhhhhhy',
+" \'                    `/ssss/`      `oyyyhhhho:',
+" \'                      ./ss/`       `/yyhho:.`',
+" \'                        .//`         -so:.`  ',
+" \'',
+" \'                             Neovim',
+" \'              hyperextensible Vim-based text editor',
+" \'',
+" \]
+" if !exists(':Startify')
+    " finish
+" endif
+
+
+" if has('nvim')
+    " let g:startify_ascii = [
+let g:startify_custom_header = [
+\ "                      .            .      ",
+\ "                    .,;'           :,.    ",
+\ "                  .,;;;,,.         ccc;.  ",
+\ "                .;c::::,,,'        ccccc: ",
+\ "                .::cc::,,,,,.      cccccc.",
+\ "                .cccccc;;;;;;'     llllll.",
+\ "                .cccccc.,;;;;;;.   llllll.",
+\ "                .cccccc  ';;;;;;'  oooooo.",
+\ "                'lllllc   .;;;;;;;.oooooo'",
+\ "                'lllllc     ,::::::looooo'",
+\ "                'llllll      .:::::lloddd'",
+\ "                .looool       .;::coooodo.",
+\ "                  .cool         'ccoooc.  ",
+\ "                    .co          .:o:.    ",
+\ "                      .           .'      ",
+\ "",
+\"                          neovim",
+\"            hyperextensible Vim-based text editor",
+\]
+" else
+    " let g:startify_ascii = [
+                " \ '     ________ ;;     ________',
+                " \ '    /********\;;;;  /********\',
+                " \ '    \********/;;;;;;\********/',
+                " \ '     |******|;;;;;;;;/*****/',
+                " \ '     |******|;;;;;;/*****/''',
+                " \ '    ;|******|;;;;/*****/'';',
+                " \ '  ;;;|******|;;/*****/'';;;;;',
+                " \ ';;;;;|******|/*****/'';;;;;;;;;',
+                " \ '  ;;;|***********/'';;;;;;;;;',
+                " \ '    ;|*********/'';;;;;;;;;',
+                " \ '     |*******/'';;;;;;;;;',
+                " \ '     |*****/'';;;;;;;;;',
+                " \ '     |***/'';;;;;;;;;',
+                " \ '     |*/''   ;;;;;;',
+                " \ '              ;;',
+                " \]
+" endif
+
+" let g:startify_custom_header = map(g:startify_ascii, '"     ".v:val')
+" let g:startify_skiplist = [
+      " \ 'COMMIT_EDITMSG',
+      " \ '^/tmp',
+      " \ escape(fnamemodify(resolve($VIMRUNTIME), ':p'), '\') .'doc',
+      " \ 'bundle/.*/doc',
+      " \ ]
+
+
+
 " }}}
 
 " ale Lint Engine ---------------------------------------------------------------{{{
@@ -629,6 +715,54 @@ let g:scratch_filetype = 'markdown'
 let g:codi#rightalign = 0
 let g:codi#width = '50%'
 
+
 " }}}
 " }}}
 
+
+" ----------------------------------------------------------------------------
+" BTags
+" ----------------------------------------------------------------------------
+function! s:align_lists(lists)
+  let maxes = {}
+  for list in a:lists
+    let i = 0
+    while i < len(list)
+      let maxes[i] = max([get(maxes, i, 0), len(list[i])])
+      let i += 1
+    endwhile
+  endfor
+  for list in a:lists
+    call map(list, "printf('%-'.maxes[v:key].'s', v:val)")
+  endfor
+  return a:lists
+endfunction
+
+function! s:btags_source()
+  let lines = map(split(system(printf(
+    \ 'ctags -f - --sort=no --excmd=pattern --language-force=%s %s',
+    \ &filetype, expand('%:S'))), "\n"), 'split(v:val, "\t")')
+  if v:shell_error
+    throw 'failed to extract tags'
+  endif
+  return map(s:align_lists(lines), 'join(v:val, "\t")')
+endfunction
+
+function! s:btags_sink(line)
+  execute split(a:line, "\t")[2]
+endfunction
+
+function! s:btags()
+  try
+    call fzf#run({'source':  s:btags_source(),
+                 \'down':    '40%',
+                 \'options': '+m -d "\t" --with-nth 1,4..',
+                 \'sink':    function('s:btags_sink')})
+  catch
+    echohl WarningMsg
+    echom v:exception
+    echohl None
+  endtry
+endfunction
+
+command! BTags call s:btags()
