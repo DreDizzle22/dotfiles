@@ -43,4 +43,4 @@ declare -A TRUELINE_SYMBOLS=(
   [vimode_ins]='INSERT'
 )
 
-source ~/.config/trueline/trueline.sh
+source ~/.local/scripts/shell/trueline.sh
