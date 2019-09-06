@@ -1,0 +1,6 @@
+# To set the location of this file
+# git config --global core.excludesfile ~/.globalgitignore
+.swp
+tags
+tags.lock
+tags.temp
