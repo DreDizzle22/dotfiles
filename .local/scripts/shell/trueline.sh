@@ -169,14 +169,14 @@ _trueline_git_segment() {
         local segment="$(_trueline_separator)"
 
         local branch_icon="$(_trueline_git_remote_icon)"
-        segment+="$(_trueline_content "$fg_color" "$bg_color" normal "$branch_icon$branch ")"
+        segment+="$(_trueline_content "$fg_color" "$bg_color" bold "$branch_icon$branch ")"
         local mod_files="$(_trueline_git_mod_files)"
         if [[ -n "$mod_files" ]]; then
-            segment+="$(_trueline_content "$TRUELINE_GIT_MODIFIED_COLOR" "$bg_color" normal "$mod_files")"
+            segment+="$(_trueline_content "$TRUELINE_GIT_MODIFIED_COLOR" "$bg_color" bold "$mod_files")"
         fi
         local behind_ahead="$(_trueline_git_behind_ahead "$branch")"
         if [[ -n "$behind_ahead" ]]; then
-            segment+="$(_trueline_content "$TRUELINE_GIT_BEHIND_AHEAD_COLOR" "$bg_color" normal "$behind_ahead")"
+            segment+="$(_trueline_content "$TRUELINE_GIT_BEHIND_AHEAD_COLOR" "$bg_color" bold "$behind_ahead")"
         fi
         PS1+="$segment"
         _last_color=$bg_color
