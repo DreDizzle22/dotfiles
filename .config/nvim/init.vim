@@ -1030,6 +1030,7 @@ set includeexpr=LoadMainNodeModule(v:fname)
 " Indent Guide Settings
 " let g:indentLine_char = '.'
 let g:indentLine_char_list = ['┊']
+let g:indentLine_conceallevel = 0
 
 " change status of Tmuxline when Vim mode changes
 " if exists('$TMUX')
