@@ -19,5 +19,5 @@
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "typescript.preferences.quoteStyle": "double",
   "typescript.referencesCodeLens.enable": false,
-  "coc.preferences.formatOnSaveFiletypes": ["javascript", "json, html, css", "Markdown"]
+  "coc.preferences.formatOnSaveFiletypes": ["javascript", "json", "html", "css", "Markdown"]
 }
