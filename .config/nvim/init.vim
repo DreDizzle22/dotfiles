@@ -742,22 +742,62 @@ let g:startify_session_persistence=1
 
 " if has('nvim')
     " let g:startify_ascii = [
+" let g:startify_custom_header = [
+" \ "                      .            .      ",
+" \ "                    .,;'           :,.    ",
+" \ "                  .,;;;,,.         ccc;.  ",
+" \ "                .;c::::,,,'        ccccc: ",
+" \ "                .::cc::,,,,,.      cccccc.",
+" \ "                .cccccc;;;;;;'     llllll.",
+" \ "                .cccccc.,;;;;;;.   llllll.",
+" \ "                .cccccc  ';;;;;;'  oooooo.",
+" \ "                'lllllc   .;;;;;;;.oooooo'",
+" \ "                'lllllc     ,::::::looooo'",
+" \ "                'llllll      .:::::lloddd'",
+" \ "                .looool       .;::coooodo.",
+" \ "                  .cool         'ccoooc.  ",
+" \ "                    .co          .:o:.    ",
+" \ "                      .           .'      ",
+" \ "",
+" \"                          neovim",
+" \"            hyperextensible Vim-based text editor",
+" \]
+" let g:startify_custom_header = [
+" \ "                      .            .      ",
+" \ "                    ....           ...    ",
+" \ "                  ........         .....  ",
+" \ "                ...........        ...... ",
+" \ "                .............      .......",
+" \ "                ..............     .......",
+" \ "                ................   .......",
+" \ "                .......  ........  .......",
+" \ "                .......   ................",
+" \ "                .......     ..............",
+" \ "                .......      .............",
+" \ "                .......       ............",
+" \ "                  .....         ........  ",
+" \ "                    ...          .....    ",
+" \ "                      .           ..      ",
+" \ "",
+" \"                          neovim",
+" \"            hyperextensible Vim-based text editor",
+" \]
 let g:startify_custom_header = [
-\ "                      .            .      ",
-\ "                    .,;'           :,.    ",
-\ "                  .,;;;,,.         ccc;.  ",
-\ "                .;c::::,,,'        ccccc: ",
-\ "                .::cc::,,,,,.      cccccc.",
-\ "                .cccccc;;;;;;'     llllll.",
-\ "                .cccccc.,;;;;;;.   llllll.",
-\ "                .cccccc  ';;;;;;'  oooooo.",
-\ "                'lllllc   .;;;;;;;.oooooo'",
-\ "                'lllllc     ,::::::looooo'",
-\ "                'llllll      .:::::lloddd'",
-\ "                .looool       .;::coooodo.",
-\ "                  .cool         'ccoooc.  ",
-\ "                    .co          .:o:.    ",
-\ "                      .           .'      ",
+\ "                      -            -      ",
+\ "                    ----           ---    ",
+\ "                  --------         -----  ",
+\ "                -----------        ------ ",
+\ "                -------------      -------",
+\ "                --------------     -------",
+\ "                ----------------   -------",
+\ "                -------  --------  -------",
+\ "                -------   ----------------",
+\ "                -------     --------------",
+\ "                -------      -------------",
+\ "                -------       ------------",
+\ "                  -----         --------  ",
+\ "                    ---          -----    ",
+\ "                      -           --      ",
 \ "",
 \"                          neovim",
 \"            hyperextensible Vim-based text editor",
@@ -925,6 +965,10 @@ nnoremap <c-j> <c-w><c-j>
 nnoremap <c-k> <c-w><c-k>
 nnoremap <c-h> <c-w><c-h>
 nnoremap <c-l> <c-w><c-l>
+
+nnoremap vv V
+nnoremap V v$
+nnoremap Y y$
 
 " Copy all lines
 nnoremap ya maggyG'a
