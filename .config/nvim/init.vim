@@ -106,6 +106,9 @@ let s:uname = system("echo -n \"$(uname)\"")
 let g:python_host_prog = system("echo -n \"$(which python)\"")
 let g:python3_host_prog = system("echo -n \"$(which python3)\"")
 
+let g:ruby_host_prog = '~/.rbenv/versions/2.4.1/bin/neovim-ruby-host'
+" let g:ruby_host_prog = 'rvm system do neovim-ruby-host'
+
 "}}}
 
 " Leader Maps ---------------------------------------------------------------{{{

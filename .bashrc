@@ -1,4 +1,4 @@
-alias ll='clear; colorls -la'
+alias ll='colorls -la'
 alias ls='colorls'
 alias la='command ls -A'
 alias l='command ls -CF'
@@ -10,11 +10,12 @@ alias brc='dmux vim ~/.bashrc'
 alias irc='dmux vim ~/.inputrc'
 alias tc='dmux vim ~/.tmux.conf'
 alias iv='dmux vim ~/.config/nvim/init.vim'
+alias vimrc='dmux vim ~/.config/nvim/init.vim'
 alias sbp='source ~/.bash_profile'
 alias cat='bat --theme="OneHalfDark" --style=numbers,changes --color always'
 alias difm='vifm -c ":only" -c "set vicmd=dmux\ vim";bash -l'
 
-export PATH=$PATH:$HOME/.local/bin:$HOME/Library/Python/2.7/bin:$HOME/Library/Python/3.7/bin:/usr/local/bin:/bin/sh:/usr/local/opt/nvm/nvm.sh:$HOME/.gem/ruby/2.3.0/bin
+export PATH=$PATH:$HOME/.local/bin:$HOME/Library/Python/2.7/bin:$HOME/Library/Python/3.7/bin:/usr/local/bin:/bin/sh:/usr/local/opt/nvm/nvm.sh:$HOME/.gem/ruby/2.3.0/bin:$HOME/.rvm/bin
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export NVM_DIR="$HOME/.nvm"
@@ -64,3 +65,5 @@ declare -A TRUELINE_SYMBOLS=(
 )
 
 source ~/.local/scripts/shell/trueline.sh
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
