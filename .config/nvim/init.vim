@@ -1,103 +1,200 @@
+"
+"" Setup vim-plug  ---------------------------------------------------------------{{{
+call plug#begin('~/.config/nvim/vim-plug_plugins')
+
+
+Plug 'micalexander/fzf-vim-plugins.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'evidens/vim-twig'
+" Plug 'rafaqz/ranger.vim'
+" Plug 'micalexander/neoranger'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'OmniSharp/omnisharp-vim'
+Plug 'puremourning/vimspector'
+Plug 'pprovost/vim-ps1'
+Plug 'Yggdroot/indentLine'
+Plug 'Shougo/context_filetype.vim'
+Plug 'Shougo/dein.vim'
+" Plug 'Shougo/deoplete.nvim')
+Plug 'tobyS/pdv'
+Plug 'tobyS/vmustache'
+Plug 'henrik/vim-indexed-search'
+Plug 'metakirby5/codi.vim'
+Plug 'chaoren/vim-wordmotion'
+Plug 'chrisbra/csv.vim'
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimfiler.vim'
+Plug 'Shougo/vimproc.vim', {'build' : 'make'}
+" Plug 'SirVer/ultisnips'
+Plug 'airblade/vim-gitgutter'
+Plug 'vifm/vifm.vim'
+Plug 'bogado/file-line'
+Plug 'chrisbra/colorizer'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'urbainvaes/vim-tmux-pilot'
+Plug 'edkolev/promptline.vim'
+Plug 'ervandew/supertab'
+Plug 'godlygeek/tabular'
+Plug 'haya14busa/dein-command.vim'
+Plug 'jiangmiao/auto-pairs'
+" Plug 'joonty/vdebug'
+" Plug 'idanarye/vim-vebugger'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-peekaboo'
+Plug 'kana/vim-textobj-user'
+Plug 'kassio/neoterm'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'phpactor/phpactor', { 'build': 'composer install'}
+" Plug 'kristijanhusak/deoplete-phpactor'
+" Plug 'lvht/phpcd.vim', { 'build': 'composer install'}
+Plug 'majutsushi/tagbar'
+Plug 'mattn/emmet-vim'
+Plug 'mhinz/vim-startify'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'mtth/scratch.vim'
+Plug 'myusuf3/numbers.vim'
+" Plug 'nathanaelkane/vim-indent-guides'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'nelstrom/vim-visual-star-search'
+Plug 'leafgarland/typescript-vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'rakr/vim-one'
+Plug 'tomasiser/vim-code-dark'
+Plug 'ryanoasis/vim-devicons'
+Plug 'slim-template/vim-slim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'valloric/MatchTagAlways'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'edkolev/tmuxline.vim'
+Plug 'chrisbra/vim-diff-enhanced'
+Plug 'vim-scripts/argtextobj.vim'
+Plug 'vim-scripts/closetag.vim'
+Plug 'vimlab/split-term.vim'
+Plug 'xolox/vim-misc'
+Plug 'pangloss/vim-javascript'
+Plug 'zoubin/vim-gotofile'
+" Plug 'kkoomen/gfi.vim'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'chemzqm/vim-jsx-improve'
+" Plug 'carlitux/deoplete-ternjs', { 'build': 'yarn global add tern'}
+" Plug 'dense-analysis/ale'
+Plug 'tmux-plugins/vim-tmux'
+Plug 'svermeulen/vim-yoink'
+
+call plug#end()
+" }}}
 " Setup dein  ---------------------------------------------------------------{{{
 
-if (!isdirectory(expand("$HOME/.config/nvim/repos/github.com/Shougo/dein.vim")))
-  call system(expand("mkdir -p $HOME/.config/nvim/repos/github.com"))
-  call system(expand("git clone https://github.com/Shougo/dein.vim $HOME/.config/nvim/repos/github.com/Shougo/dein.vim"))
-endif
+" if (!isdirectory(expand("$HOME/.config/nvim/repos/github.com/Shougo/dein.vim")))
+"   call system(expand("mkdir -p $HOME/.config/nvim/repos/github.com"))
+"   call system(expand("git clone https://github.com/Shougo/dein.vim $HOME/.config/nvim/repos/github.com/Shougo/dein.vim"))
+" endif
 
-set runtimepath+=~/.config/nvim/repos/github.com/Shougo/dein.vim/
-call dein#begin(expand('~/.config/nvim'))
+" set runtimepath+=~/.config/nvim/repos/github.com/Shougo/dein.vim/
+" call dein#begin(expand('~/.config/nvim'))
 
-call dein#add('micalexander/fzf-vim-plugins.vim')
-call dein#add('editorconfig/editorconfig-vim')
-call dein#add('evidens/vim-twig')
-" call dein#add('rafaqz/ranger.vim')
-" call dein#add('micalexander/neoranger')
-call dein#add('neoclide/coc.nvim', {'merge':0, 'rev': 'release'})
-call dein#add('Yggdroot/indentLine')
-call dein#add('Shougo/context_filetype.vim')
-call dein#add('Shougo/dein.vim')
-" call dein#add('Shougo/deoplete.nvim')
-call dein#add('tobyS/pdv')
-call dein#add('tobyS/vmustache')
-call dein#add('henrik/vim-indexed-search')
-call dein#add('metakirby5/codi.vim')
-call dein#add('chaoren/vim-wordmotion')
-call dein#add('chrisbra/csv.vim')
-call dein#add('Shougo/unite.vim')
-call dein#add('Shougo/vimfiler.vim')
-call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
-" call dein#add('SirVer/ultisnips')
-call dein#add('airblade/vim-gitgutter')
-call dein#add('vifm/vifm.vim')
-call dein#add('bogado/file-line')
-call dein#add('chrisbra/colorizer')
-call dein#add('christoomey/vim-tmux-navigator')
-call dein#add('urbainvaes/vim-tmux-pilot')
-call dein#add('edkolev/promptline.vim')
-call dein#add('ervandew/supertab')
-call dein#add('godlygeek/tabular')
-call dein#add('haya14busa/dein-command.vim')
-call dein#add('jiangmiao/auto-pairs')
-call dein#add('joonty/vdebug')
-call dein#add('idanarye/vim-vebugger')
-call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
-call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
-call dein#add('junegunn/vim-peekaboo')
-call dein#add('kana/vim-textobj-user')
-call dein#add('kassio/neoterm')
-call dein#add('ludovicchabant/vim-gutentags')
-call dein#add('phpactor/phpactor', { 'build': 'composer install'})
-" call dein#add('kristijanhusak/deoplete-phpactor')
-" call dein#add('lvht/phpcd.vim', { 'build': 'composer install'})
-call dein#add('majutsushi/tagbar')
-call dein#add('mattn/emmet-vim')
-call dein#add('mhinz/vim-startify')
-call dein#add('michaeljsmith/vim-indent-object')
-call dein#add('mtth/scratch.vim')
-call dein#add('myusuf3/numbers.vim')
-" call dein#add('nathanaelkane/vim-indent-guides')
-call dein#add('nelstrom/vim-textobj-rubyblock')
-call dein#add('nelstrom/vim-visual-star-search')
-call dein#add('leafgarland/typescript-vim')
-call dein#add('plasticboy/vim-markdown')
-call dein#add('rakr/vim-one')
-call dein#add('ryanoasis/vim-devicons')
-call dein#add('slim-template/vim-slim')
-call dein#add('tpope/vim-commentary')
-call dein#add('tpope/vim-eunuch')
-call dein#add('tpope/vim-fugitive')
-call dein#add('tpope/vim-repeat')
-call dein#add('tpope/vim-rhubarb')
-call dein#add('tpope/vim-surround')
-call dein#add('tpope/vim-unimpaired')
-call dein#add('valloric/MatchTagAlways')
-call dein#add('vim-airline/vim-airline')
-call dein#add('vim-airline/vim-airline-themes')
-call dein#add('edkolev/tmuxline.vim')
-call dein#add('chrisbra/vim-diff-enhanced')
-call dein#add('vim-scripts/argtextobj.vim')
-call dein#add('vim-scripts/closetag.vim')
-call dein#add('vimlab/split-term.vim')
-call dein#add('xolox/vim-misc')
-call dein#add('pangloss/vim-javascript')
-call dein#add('zoubin/vim-gotofile')
-" call dein#add('kkoomen/gfi.vim')
-call dein#add('maxmellon/vim-jsx-pretty')
-call dein#add('HerringtonDarkholme/yats.vim')
-" call dein#add('chemzqm/vim-jsx-improve')
-" call dein#add('carlitux/deoplete-ternjs', { 'build': 'yarn global add tern'})
-" call dein#add('dense-analysis/ale')
-call dein#add('tmux-plugins/vim-tmux')
-call dein#add('svermeulen/vim-yoink')
+" call dein#add('micalexander/fzf-vim-plugins.vim')
+" call dein#add('editorconfig/editorconfig-vim')
+" call dein#add('evidens/vim-twig')
+" " call dein#add('rafaqz/ranger.vim')
+" " call dein#add('micalexander/neoranger')
+" call dein#add('neoclide/coc.nvim', {'merge':0, 'rev': 'release'})
+" call dein#add('OmniSharp/omnisharp-vim')
+" call dein#add('Yggdroot/indentLine')
+" call dein#add('Shougo/context_filetype.vim')
+" call dein#add('Shougo/dein.vim')
+" " call dein#add('Shougo/deoplete.nvim')
+" call dein#add('tobyS/pdv')
+" call dein#add('tobyS/vmustache')
+" call dein#add('henrik/vim-indexed-search')
+" call dein#add('metakirby5/codi.vim')
+" call dein#add('chaoren/vim-wordmotion')
+" call dein#add('chrisbra/csv.vim')
+" call dein#add('Shougo/unite.vim')
+" call dein#add('Shougo/vimfiler.vim')
+" call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+" " call dein#add('SirVer/ultisnips')
+" call dein#add('airblade/vim-gitgutter')
+" call dein#add('vifm/vifm.vim')
+" call dein#add('bogado/file-line')
+" call dein#add('chrisbra/colorizer')
+" call dein#add('christoomey/vim-tmux-navigator')
+" call dein#add('urbainvaes/vim-tmux-pilot')
+" call dein#add('edkolev/promptline.vim')
+" call dein#add('ervandew/supertab')
+" call dein#add('godlygeek/tabular')
+" call dein#add('haya14busa/dein-command.vim')
+" call dein#add('jiangmiao/auto-pairs')
+" call dein#add('joonty/vdebug')
+" call dein#add('idanarye/vim-vebugger')
+" call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
+" call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
+" call dein#add('junegunn/vim-peekaboo')
+" call dein#add('kana/vim-textobj-user')
+" call dein#add('kassio/neoterm')
+" call dein#add('ludovicchabant/vim-gutentags')
+" call dein#add('phpactor/phpactor', { 'build': 'composer install'})
+" " call dein#add('kristijanhusak/deoplete-phpactor')
+" " call dein#add('lvht/phpcd.vim', { 'build': 'composer install'})
+" call dein#add('majutsushi/tagbar')
+" call dein#add('mattn/emmet-vim')
+" call dein#add('mhinz/vim-startify')
+" call dein#add('michaeljsmith/vim-indent-object')
+" call dein#add('mtth/scratch.vim')
+" call dein#add('myusuf3/numbers.vim')
+" " call dein#add('nathanaelkane/vim-indent-guides')
+" call dein#add('nelstrom/vim-textobj-rubyblock')
+" call dein#add('nelstrom/vim-visual-star-search')
+" call dein#add('leafgarland/typescript-vim')
+" call dein#add('plasticboy/vim-markdown')
+" call dein#add('rakr/vim-one')
+" call dein#add('tomasiser/vim-code-dark')
+" call dein#add('ryanoasis/vim-devicons')
+" call dein#add('slim-template/vim-slim')
+" call dein#add('tpope/vim-commentary')
+" call dein#add('tpope/vim-eunuch')
+" call dein#add('tpope/vim-fugitive')
+" call dein#add('tpope/vim-repeat')
+" call dein#add('tpope/vim-rhubarb')
+" call dein#add('tpope/vim-surround')
+" call dein#add('tpope/vim-unimpaired')
+" call dein#add('valloric/MatchTagAlways')
+" call dein#add('vim-airline/vim-airline')
+" call dein#add('vim-airline/vim-airline-themes')
+" call dein#add('edkolev/tmuxline.vim')
+" call dein#add('chrisbra/vim-diff-enhanced')
+" call dein#add('vim-scripts/argtextobj.vim')
+" call dein#add('vim-scripts/closetag.vim')
+" call dein#add('vimlab/split-term.vim')
+" call dein#add('xolox/vim-misc')
+" call dein#add('pangloss/vim-javascript')
+" call dein#add('zoubin/vim-gotofile')
+" " call dein#add('kkoomen/gfi.vim')
+" call dein#add('maxmellon/vim-jsx-pretty')
+" call dein#add('HerringtonDarkholme/yats.vim')
+" " call dein#add('chemzqm/vim-jsx-improve')
+" " call dein#add('carlitux/deoplete-ternjs', { 'build': 'yarn global add tern'})
+" " call dein#add('dense-analysis/ale')
+" call dein#add('tmux-plugins/vim-tmux')
+" call dein#add('svermeulen/vim-yoink')
 
-if dein#check_install()
-  call dein#install()
-  let pluginsExist=1
-endif
-call dein#end()
+" if dein#check_install()
+"   call dein#install()
+"   let pluginsExist=1
+" endif
+" call dein#end()
 
 " }}}
+"
 "
 
 " Environment Dependencies ---------------------------------------------------------------{{{
@@ -110,6 +207,7 @@ let g:ruby_host_prog = '~/.rbenv/versions/2.4.1/bin/neovim-ruby-host'
 " let g:ruby_host_prog = 'rvm system do neovim-ruby-host'
 
 "}}}
+let g:node_host_prog = '~/.nvm/versions/node/v12.14.1/bin/neovim-node-host'
 
 " Leader Maps ---------------------------------------------------------------{{{
 let mapleader = "\<Space>"
@@ -397,9 +495,10 @@ let g:one_allow_italics = 1
 syntax enable
 colorscheme one
 set background=dark
+" colorscheme codedark
 
-" call one#highlight('CursorLineNr', '282c33', '99c37e', 'none')
-" call one#highlight('Cursor', '99c37e', '282c33', 'none')
+call one#highlight('CursorLineNr', '282c33', '99c37e', 'none')
+call one#highlight('Cursor', '99c37e', '282c33', 'none')
 
 
 autocmd VimEnter,ColorScheme * :call one#highlight ('StartifyHeader', '61afef', 'none', 'none')
@@ -409,6 +508,61 @@ autocmd VimEnter,Colorscheme * :call one#highlight('CursorLineNr', '282c33', '99
 autocmd VimEnter,Colorscheme * :call one#highlight('Cursor', '99c37e', '282c33', 'none')
 autocmd VimEnter,Colorscheme * :call one#highlight('Normal', 'none', 'none', 'none')
 " }}}
+
+" OmniSharp Commands --------------------------------------------------------------- {{{
+ augroup omnisharp_commands
+  autocmd!
+
+  " Show type information automatically when the cursor stops moving.
+  " Note that the type is echoed to the Vim command line, and will overwrite
+  " any other messages in this space including e.g. ALE linting messages.
+  autocmd CursorHold *.cs OmniSharpTypeLookup
+
+  " The following commands are contextual, based on the cursor position.
+  autocmd FileType cs nmap <silent> <buffer> gd <Plug>(omnisharp_go_to_definition)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>osfu <Plug>(omnisharp_find_usages)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>osfi <Plug>(omnisharp_find_implementations)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>ospd <Plug>(omnisharp_preview_definition)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>ospi <Plug>(omnisharp_preview_implementations)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>ost <Plug>(omnisharp_type_lookup)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>osd <Plug>(omnisharp_documentation)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>osfs <Plug>(omnisharp_find_symbol)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>osfx <Plug>(omnisharp_fix_usings)
+  autocmd FileType cs nmap <silent> <buffer> <C-\> <Plug>(omnisharp_signature_help)
+  autocmd FileType cs imap <silent> <buffer> <C-\> <Plug>(omnisharp_signature_help)
+
+  " Navigate up and down by method/property/field
+  autocmd FileType cs nmap <silent> <buffer> [[ <Plug>(omnisharp_navigate_up)
+  autocmd FileType cs nmap <silent> <buffer> ]] <Plug>(omnisharp_navigate_down)
+  " Find all code errors/warnings for the current solution and populate the quickfix window
+  autocmd FileType cs nmap <silent> <buffer> <Leader>osgcc <Plug>(omnisharp_global_code_check)
+  " Contextual code actions (uses fzf, CtrlP or unite.vim selector when available)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>osca <Plug>(omnisharp_code_actions)
+  autocmd FileType cs xmap <silent> <buffer> <Leader>osca <Plug>(omnisharp_code_actions)
+  " Repeat the last code action performed (does not use a selector)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>os. <Plug>(omnisharp_code_action_repeat)
+  autocmd FileType cs xmap <silent> <buffer> <Leader>os. <Plug>(omnisharp_code_action_repeat)
+
+  autocmd FileType cs nmap <silent> <buffer> <Leader>os= <Plug>(omnisharp_code_format)
+
+  autocmd FileType cs nmap <silent> <buffer> <Leader>osnm <Plug>(omnisharp_rename)
+
+  autocmd FileType cs nmap <silent> <buffer> <Leader>osre <Plug>(omnisharp_restart_server)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>osst <Plug>(omnisharp_start_server)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>ossp <Plug>(omnisharp_stop_server)
+augroup END
+
+let g:OmniSharp_highlighting = 0
+
+" Enable snippet completion, using the ultisnips plugin
+" let g:OmniSharp_want_snippet=1
+"  }}}
+
+
+" Vimspect --------------------------------------------------------------- {{{
+let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
+" }}}
+
 
 " Airline ---------------------------------------------------------------{{{
 let g:airline_theme='one'
@@ -527,7 +681,7 @@ let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
 let g:rg_command = '
   \ rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always"
-  \ -g "*.{js,tsx,jsx,scss,css,less,json,php,md,styl,jade,html,config,py,cpp,c,go,hs,rb,conf}"
+  \ -g "*.{js,tsx,jsx,scss,css,less,json,php,md,styl,jade,html,config,py,cpp,c,go,hs,rb,conf,cs}"
   \ -g "!{.git,node_modules,vendor}/*" '
 
 command! -bang -nargs=? -complete=dir Files
@@ -919,9 +1073,9 @@ let g:colorizer_auto_filetype='scss,css,html'
 
 " VeDebug ---------------------------------------------------------------{{{
 
-let g:vdebug_options = {}
-let g:vdebug_options["port"] = 9009
-let g:vdebug_options["break_on_open"] = 0
+" let g:vdebug_options = {}
+" let g:vdebug_options["port"] = 9009
+" let g:vdebug_options["break_on_open"] = 0
 
 " }}}
 

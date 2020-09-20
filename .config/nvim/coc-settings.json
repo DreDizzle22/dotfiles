@@ -4,8 +4,7 @@
   "diagnostic.warningSign": "",
   "diagnostic.infoSign": "",
   "suggest.noselect": true,
-  "languageserver": {
-  },
+  "languageserver": {},
   "list.insertMappings": {
     "<C-x>": "action:split",
     "<C-v>": "action:vsplit"
@@ -19,5 +18,12 @@
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "typescript.preferences.quoteStyle": "double",
   "typescript.referencesCodeLens.enable": false,
-  "coc.preferences.formatOnSaveFiletypes": ["javascript", "json", "html", "css", "Markdown"]
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "json",
+    "html",
+    "css",
+    "Markdown",
+    "cs"
+  ]
 }

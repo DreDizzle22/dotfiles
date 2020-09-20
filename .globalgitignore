@@ -1,7 +1,16 @@
 # To set the location of this file
 # git config --global core.excludesfile ~/.globalgitignore
+##################################################################
+
+# Vim
 .swp
+
+# VS Code
+.vscode
+
+# Other
 tags
 tags.lock
 tags.temp
 .tern-port
+.DS_Store
