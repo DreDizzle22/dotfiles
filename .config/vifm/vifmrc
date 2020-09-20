@@ -543,12 +543,12 @@ let $VIFM="%4*"
 
 " GIT SUPPORT "
 """""""""""""""
-let $GIT="%5* %{system('sh ~/.config/vifm/git-status.sh')}"
+" let $GIT="%5* %{system('sh ~/.config/vifm/git-status.sh')}"
 
 
 
 " SET STATUSLINE "
 """"""""""""""""""
-au DirEnter * execute 'set' 'statusline="'.$GIT.'"'
+" au DirEnter * execute 'set' 'statusline="'.$GIT.'"'
 
 
