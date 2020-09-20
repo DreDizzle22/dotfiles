@@ -4,6 +4,7 @@
 
 # Vim
 .swp
+.vimspector.json
 
 # VS Code
 .vscode
